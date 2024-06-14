@@ -4,6 +4,9 @@ import com.assuresoft.pages.TaskPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
+
+
 
 public class TaskSteps {
 
@@ -19,69 +22,83 @@ public class TaskSteps {
     }
     @Then("all the completed task should clear")
     public void all_the_completed_task_should_clear() {
-        this.taksListPage.clickCompleteButton();
-
+        throw new io.cucumber.java.PendingException();
     }
-
     @Given("add a task item")
     public void add_a_task_item() {
-        // Write code here that turns the phrase above into concrete actions
+        this.taksListPage.newEntryTodo();
     }
     @Given("complete a task item")
     public void complete_a_task_item() {
-        this.taksListPage.clickClearButton();
+        this.taksListPage.clickCompleteATaskItem();
     }
-
     @When("I validate the items titles")
     public void i_validate_the_items_titles() {
-        // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
     @Then("the items titles should match")
     public void the_items_titles_should_match() {
-        // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
     @Then("I was not able to see the clear button")
     public void i_was_not_able_to_see_the_clear_button() {
-        // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
     @When("I enter text and press enter")
     public void i_enter_text_and_press_enter() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        this.taksListPage.newEntryTodo();
     }
     @Then("a new task should be added")
     public void a_new_task_should_be_added() {
-        // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
     @When("I click on delete button")
     public void i_click_on_delete_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        this.taksListPage.clickDeleteTask();
     }
     @Then("the selected task should be deleted")
     public void the_selected_task_should_be_deleted() {
-        // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
     @When("I validate the items left")
     public void i_validate_the_items_left() {
-        // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
     @Then("the number should be match")
     public void the_number_should_be_match() {
-        // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-
-
+    @When("I double click on a task")
+    public void i_double_click_on_a_task() {
+        this.taksListPage.doubleClickOnATask();
+    }
+    @When("enter a new title value")
+    public void enter_a_new_title_value() {
+        this.taksListPage.newEntryTodo();
+    }
+    @Then("the selected task should be updated")
+    public void the_selected_task_should_be_updated() {
+        throw new io.cucumber.java.PendingException();
+    }
+    @When("I click on complete button")
+    public void i_click_on_complete_button() {
+        this.taksListPage.clickCompleteButton();
+    }
+    @Then("the selected task should be completed")
+    public void the_selected_task_should_be_completed() {
+        throw new io.cucumber.java.PendingException();
+    }
+    @Then("the selected task should be remain uncompleted")
+    public void the_selected_task_should_be_remain_uncompleted() {
+        throw new io.cucumber.java.PendingException();
+    }
+    @Given("add a task item predefined")
+    public void add_a_task_item_predefined() {
+        this.taksListPage.newEntryTodoPredefined();
+    }
 }
 

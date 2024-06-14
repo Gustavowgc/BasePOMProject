@@ -16,8 +16,8 @@ Feature: Clear todo completed
   Scenario: As a user, I can update a task title
 
     Given Navigate to the home page
+    And add a task item
     When I double click on a task
-    And enter a new title value
     Then the selected task should be updated
 
   Scenario: As a user, I can complete a task
@@ -31,8 +31,7 @@ Feature: Clear todo completed
 
     Given Navigate to the home page
     And add a task item
-    When I click on delete button
-    And I click on complete button
-    And I click on complete button
+    And complete a task item
+    And complete a task item
     Then the selected task should be remain uncompleted
 
