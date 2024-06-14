@@ -14,18 +14,15 @@ public class TaskSteps {
     @Given("Navigate to the home page")
     public void navigate_to_the_home_page() {
         this.taksListPage= new TaskPage();
-
-       // page.navigate("https://demo.playwright.dev/todomvc/#/");
-//
-
     }
     @When("I click on clear all button")
     public void i_click_on_clear_all_button() {
-        // Write code here that turns the phrase above into concrete actions
+        this.taksListPage.clickClearButton();
     }
     @Then("all the completed task should clear")
     public void all_the_completed_task_should_clear() {
-        // Write code here that turns the phrase above into concrete actions
+        this.taksListPage.clickCompleteButton();
+
     }
 
     @Given("add a task item")
@@ -34,7 +31,7 @@ public class TaskSteps {
     }
     @Given("complete a task item")
     public void complete_a_task_item() {
-        // Write code here that turns the phrase above into concrete actions
+        this.taksListPage.clickClearButton();
     }
 
     @When("I validate the items titles")

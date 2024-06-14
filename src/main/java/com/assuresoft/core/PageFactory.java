@@ -14,7 +14,9 @@ public class PageFactory {
                 playwright.chromium().launch(
                         new BrowserType.LaunchOptions().setHeadless(false)
                 );
-        return browser.newPage();
+        Page page= browser.newPage();
+        page.navigate("https://demo.playwright.dev/todomvc/#/");
+        return page;
 
     }
 }
