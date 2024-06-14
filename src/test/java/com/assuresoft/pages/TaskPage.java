@@ -1,4 +1,4 @@
-package com.pages;
+package com.assuresoft.pages;
 
 import com.assuresoft.core.PageBase;
 

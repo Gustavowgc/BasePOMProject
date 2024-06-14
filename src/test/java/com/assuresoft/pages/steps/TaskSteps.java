@@ -1,7 +1,7 @@
-package com.steps;
+package com.assuresoft.pages.steps;
 
 import com.assuresoft.core.BaseTestSteps;
-import com.pages.TaskPage;
+import com.assuresoft.pages.TaskPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
