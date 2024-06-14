@@ -9,8 +9,6 @@ public class TaskSteps {
 
     TaskPage taksListPage;
 
-
-
     @Given("Navigate to the home page")
     public void navigate_to_the_home_page() {
         this.taksListPage= new TaskPage();

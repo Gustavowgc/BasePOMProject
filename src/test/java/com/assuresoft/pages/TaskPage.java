@@ -1,6 +1,7 @@
 package com.assuresoft.pages;
 
 import com.assuresoft.core.PageBase;
+import com.microsoft.playwright.Page;
 import io.cucumber.java.StepDefinitionAnnotation;
 
 
@@ -10,6 +11,8 @@ public class TaskPage extends PageBase {
     private String clearButton="//button[@class='clear-completed']";
 
     private String completeButton="";
+
+
 
 
     public void clickClearButton(){
