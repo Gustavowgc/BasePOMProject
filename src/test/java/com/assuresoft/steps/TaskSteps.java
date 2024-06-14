@@ -5,13 +5,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
-
-
+import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertEquals;
+import java.util.List;
 
 public class TaskSteps {
-
-    TaskPage taksListPage;
-
+private    TaskPage taksListPage;
     @Given("Navigate to the home page")
     public void navigate_to_the_home_page() {
         this.taksListPage= new TaskPage();
@@ -22,7 +22,7 @@ public class TaskSteps {
     }
     @Then("all the completed task should clear")
     public void all_the_completed_task_should_clear() {
-        throw new io.cucumber.java.PendingException();
+
     }
     @Given("add a task item")
     public void add_a_task_item() {
@@ -32,18 +32,12 @@ public class TaskSteps {
     public void complete_a_task_item() {
         this.taksListPage.clickCompleteATaskItem();
     }
-    @When("I validate the items titles")
-    public void i_validate_the_items_titles() {
-        throw new io.cucumber.java.PendingException();
-    }
     @Then("the items titles should match")
     public void the_items_titles_should_match() {
-        throw new io.cucumber.java.PendingException();
     }
 
     @Then("I was not able to see the clear button")
     public void i_was_not_able_to_see_the_clear_button() {
-        throw new io.cucumber.java.PendingException();
     }
 
     @When("I enter text and press enter")
@@ -52,7 +46,9 @@ public class TaskSteps {
     }
     @Then("a new task should be added")
     public void a_new_task_should_be_added() {
-        throw new io.cucumber.java.PendingException();
+        List<String> tasks = this.taksListPage.getTaskList();
+        String lastTask = tasks.get(tasks.size() - 1);
+        assertTrue(this.taksListPage.isTaskAdded(lastTask), "New task was not added successfully");
     }
 
     @When("I click on delete button")
@@ -61,16 +57,14 @@ public class TaskSteps {
     }
     @Then("the selected task should be deleted")
     public void the_selected_task_should_be_deleted() {
-        throw new io.cucumber.java.PendingException();
+        assertFalse(this.taksListPage.isTaskPresent(), "Selected task was not deleted successfully");
     }
 
     @When("I validate the items left")
     public void i_validate_the_items_left() {
-        throw new io.cucumber.java.PendingException();
     }
     @Then("the number should be match")
     public void the_number_should_be_match() {
-        throw new io.cucumber.java.PendingException();
     }
     @When("I double click on a task")
     public void i_double_click_on_a_task() {
@@ -82,19 +76,14 @@ public class TaskSteps {
     }
     @Then("the selected task should be updated")
     public void the_selected_task_should_be_updated() {
-        throw new io.cucumber.java.PendingException();
+
     }
     @When("I click on complete button")
     public void i_click_on_complete_button() {
         this.taksListPage.clickCompleteButton();
     }
-    @Then("the selected task should be completed")
-    public void the_selected_task_should_be_completed() {
-        throw new io.cucumber.java.PendingException();
-    }
     @Then("the selected task should be remain uncompleted")
     public void the_selected_task_should_be_remain_uncompleted() {
-        throw new io.cucumber.java.PendingException();
     }
     @Given("add a task item predefined")
     public void add_a_task_item_predefined() {

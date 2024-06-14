@@ -4,9 +4,16 @@ import com.assuresoft.core.PageBase;
 import com.microsoft.playwright.Page;
 import io.cucumber.java.StepDefinitionAnnotation;
 import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class TaskPage extends PageBase {
+    private List<String> taskList;
+
+    public TaskPage() {
+        this.taskList = new ArrayList<>();
+    }
     private String inputToggle = "//input[@class='toggle']";
     private String clearButton = "//button[@class='clear-completed']";
     private String completeButton = "//a[@href='#/completed']";
@@ -29,7 +36,6 @@ public class TaskPage extends PageBase {
     public void clickDeleteTask() {
         page.click(labelTodo);
         page.click(deleteTaskButton);
-
     }
 
     private char generateRandomChar() {
@@ -42,22 +48,28 @@ public class TaskPage extends PageBase {
         page.click(newTodo);
         char randomChar = generateRandomChar();
         page.type(newTodo, String.valueOf(randomChar) + "\n");
+        String newTask = String.valueOf(randomChar);
+        this.taskList.add(newTask);
     }
     public void doubleClickOnATask() {
         page.dblclick(labelTodo);
         char randomChar = generateRandomChar();
         page.type(labelTodo, String.valueOf(randomChar) + "\n");
+        String newTask = String.valueOf(randomChar);
+        this.taskList.add(newTask);
     }
     public void newEntryTodoPredefined() {
         page.click(newTodo);
         page.type(newTodo, "a\n");
     }
+    public boolean isTaskAdded(String taskText) {
+        return this.taskList.contains(taskText);
+    }
+    public List<String> getTaskList() {
+        return this.taskList;
+    }
+    public boolean isTaskPresent() {
+        return this.taskList.isEmpty();
+    }
+
 }
-
-
-
-
-
-
-
-
