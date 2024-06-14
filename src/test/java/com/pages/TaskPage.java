@@ -7,6 +7,14 @@ public class TaskPage extends PageBase {
     private String inputToggle="//input[@class='toggle']";
     private String clearButton="//button[@class='clear-completed']";
 
+    public TaskPage(){
+        super();
+
+    }
+    
+
+
+
 
 
 

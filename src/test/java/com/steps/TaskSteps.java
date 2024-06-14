@@ -15,6 +15,7 @@ public class TaskSteps extends BaseTestSteps {
     @Given("Navigate to the home page")
     public void navigate_to_the_home_page() {
         this.taksListPage= new TaskPage();
+
        // page.navigate("https://demo.playwright.dev/todomvc/#/");
 //
 
