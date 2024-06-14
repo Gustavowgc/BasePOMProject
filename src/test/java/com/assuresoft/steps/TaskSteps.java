@@ -1,12 +1,11 @@
 package com.assuresoft.steps;
 
-import com.assuresoft.core.BaseTestSteps;
 import com.assuresoft.pages.TaskPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class TaskSteps extends BaseTestSteps {
+public class TaskSteps {
 
     TaskPage taksListPage;
 

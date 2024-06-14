@@ -13,15 +13,12 @@ public class PageBase {
 
     protected Page page;
 
+
     @BeforeMethod(alwaysRun = true)
     @Parameters({"Environment"})
-    public void init(String sEnv) {
-        Playwright playwright= Playwright.create();
-        Browser browser =
-                playwright.chromium().launch(
-                        new BrowserType.LaunchOptions().setHeadless(false)
-                );
-        page =browser.newPage();
+    public void init() {
+        PageFactory factory= new PageFactory();
+        page =factory.initBrowser();
 
     }
 
